@@ -5,6 +5,8 @@ import fs from 'fs';
 import os from 'os';
 const {__dirname} = expose;
 
+const PORT = process.env.PORT || 3000;
+
 const app = express();
 
 hbs.registerPartials(`${__dirname}/views/partials`)
@@ -49,6 +51,6 @@ app.get('/bad', (request, response) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log('Server is listening at port 3000');
+app.listen(PORT, () => {
+  console.log(`Server is listening at port ${PORT}`);
 });

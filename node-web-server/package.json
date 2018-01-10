@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --experimental-modules server.mjs -e js,mjs,hbs",
+    "start": "node --experimental-modules server.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
