@@ -1,9 +1,7 @@
-import express from 'express';
-import expose from './expose.js';
-import hbs from 'hbs';
-import fs from 'fs';
-import os from 'os';
-const {__dirname} = expose;
+const express = require('express');
+const hbs = require('hbs');
+const fs = require('fs');
+const os = require('os');
 
 const PORT = process.env.PORT || 3000;
 
@@ -22,12 +20,6 @@ app.use((request, response, next) => {
   });
   next();
 });
-
-// app.use((request, response, next) => {
-//   response.render('maintenance.hbs', {
-//     pageTitle: 'Maintenance'
-//   });
-// });
 
 hbs.registerHelper('getCurrentYear', () => new Date().getFullYear());
 hbs.registerHelper('screamIt', (text) => text.toUpperCase());
@@ -60,3 +52,5 @@ app.get('/bad', (request, response) => {
 app.listen(PORT, () => {
   console.log(`Server is listening at port ${PORT}`);
 });
+
+module.exports = app;

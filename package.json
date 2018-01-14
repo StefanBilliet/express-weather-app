@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "node --experimental-modules server.mjs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node node_modules/.bin/jest"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2",
-    "hbs": "^4.0.1"
+    "hbs": "^4.0.1",
+    "jest": "^22.0.6",
+    "supertest": "^3.0.0"
   },
   "engines": {
     "node": "9.3.0"
